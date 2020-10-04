@@ -76,6 +76,7 @@ int main()
     Dragon dragon { "Garry The Dragon", 200, 50 };
     DragonSlayer dragonSlayer { "Virgil the Dragon Slayer", 8, 5 };
     
+    
     std::cout << "\nstart of battle" << std::endl;
 
     paladin.defend();
