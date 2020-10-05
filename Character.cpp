@@ -4,6 +4,7 @@
 
 #include "DefensiveItem.h"
 #include "HelpfulItem.h"
+#include "Utility.h"
 
 Character::Character(int hp, int armor_, int attackDamage_ ) :
     hitPoints(hp),
@@ -86,27 +87,34 @@ int Character::takeDamage(int damage)
     return hitPoints;
 }
 
+void DefeatAndLevelUp(int& startingValue , int& currentValue)
+{
+    if(currentValue < startingValue)
+    {
+        currentValue = startingValue;
+    }
+    currentValue += currentValue * 0.10;
+    startingValue = currentValue;
+}
 
-#include <assert>
 void Character::attackInternal(Character& other)
 {
-    if( other.hitPoints <= 0 )
-    {
-        /*
-        When you defeat another Character: 
-            a) your stats are restored to their initial value if they are lower than it.
-            b) your stats are boosted 10%
-            c) the initial value of your stats is updated to reflect this boosted stat for the next time you defeat another character.
-      */
-        assert(false);
-        std::cout << getName() << " defeated " << other.getName() << " and leveled up!" << std::endl;        
-    }
+    /*
+    When you defeat another Character: 
+        a) your stats are restored to their initial value if they are lower than it.
+        b) your stats are boosted 10%
+        c) the initial value of your stats is updated to reflect this boosted stat for the next time you defeat another character.
+    */
+    DefeatAndLevelUp( *initialHitPoints, hitPoints );
+    DefeatAndLevelUp( *initialArmorLevel, armor );
+    DefeatAndLevelUp( *initialAttackDamage, attackDamage );;
+
+    std::cout << getName() << " defeated " << other.getName() << " and leveled up!" << std::endl;  
 }
 
 void Character::printStats()
 {
     std::cout << getName() << "'s stats: " << std::endl;
-    assert(false);
     /*
     make your getStats() use a function from the Utility.h
     */

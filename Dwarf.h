@@ -1,4 +1,6 @@
 #pragma once
+#include <iostream>
+#include "Character.h"
 
 struct Dwarf : Character
 {
@@ -6,7 +8,6 @@ struct Dwarf : Character
 
     const std::string& getName() override;
     std::string getStats() override;
-    void attack( Character& other ) override;
 
 private:
     const std::string name;

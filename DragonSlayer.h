@@ -1,5 +1,6 @@
 #pragma once
 
+
 struct DragonSlayer : Character
 {
     DragonSlayer(std::string name_, int hp, int armor);
