@@ -2,6 +2,7 @@
 
 #include "HelpfulItem.h"
 #include "DefensiveItem.h"
+#include "AttackItem.h"
 #include "Character.h"
 
 
@@ -28,6 +29,19 @@ std::vector<std::unique_ptr<Item>> makeDefensiveItems(int num)
     }
     
     std::cout << "made " << items.size() << " defensive items" << std::endl;
+    return items;
+}
+
+std::vector<std::unique_ptr<Item>> makeAttackItems(int num)
+{
+    std::vector<std::unique_ptr<Item>> items;
+    
+    while( num-- >= 0 )
+    {
+        items.push_back( std::unique_ptr<AttackItem>(new AttackItem()) );
+    }
+    
+    std::cout << "made " << items.size() << " attack items" << std::endl;
     return items;
 }
 
