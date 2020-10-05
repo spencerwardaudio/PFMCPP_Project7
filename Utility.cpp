@@ -57,7 +57,7 @@ std::string getCharacterStats(Character* character)
     return str;
 }
 
-void useDefensiveItem(Character*, Item& item)
+void useDefensiveItem(Character* character, Item& item)
 {
     //dwarves, paladins, and DragonSlayers get extra boosts from defensive item.
     if( auto* chDwarf = dynamic_cast<Dwarf*>(character) )
@@ -78,7 +78,7 @@ void useDefensiveItem(Character*, Item& item)
         //dragons don't need defensive items
     }  
 }
-void useHelpfulItem(Character*, Item* item)
+void useHelpfulItem(Character* character, Item* item)
 {
     if( auto* chDwarf = dynamic_cast<Dwarf*>(character) )
     {
@@ -97,7 +97,7 @@ void useHelpfulItem(Character*, Item* item)
         //dragons don't carry helpful items!
     }
 }
-void useAttackItem(Character*, Item* item)
+void useAttackItem(Character* character, Item* item)
 {
     if( auto* chDwarf = dynamic_cast<Dwarf*>(character) )
     {
@@ -109,7 +109,7 @@ void useAttackItem(Character*, Item* item)
     }
     else if( auto* chDragonSlayer = dynamic_cast<DragonSlayer*>(character))
     {
-        chDragonSlayer->boostAttackDamage( chDragonSlayer->getAttackDamage() * item->getBoost() );
+        // chDragonSlayer->boostAttackDamage( chDragonSlayer->getAttackDamage() * item->getBoost() );
         //DragonSlayers get a 10x boost when attacking dragons, from their attack item.
         //so their attack item should boost their attack damage by a factor of 10
         //this means you need to GET the attack damage, multiply it by the item's boost, and BOOST the attackDamage with that multiplied value.  
