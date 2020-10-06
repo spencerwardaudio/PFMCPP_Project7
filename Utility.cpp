@@ -1,5 +1,4 @@
 #include "Utility.h"
-
 #include "HelpfulItem.h"
 #include "DefensiveItem.h"
 #include "AttackItem.h"

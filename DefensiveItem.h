@@ -1,5 +1,4 @@
 #pragma once
-
 #include "Item.h"
 
 struct DefensiveItem : Item

@@ -1,10 +1,8 @@
 #pragma once
-
 #include <string>
 #include <vector>
 #include <memory>
 #include <iostream>
-
 #include "Item.h"
 #include "Utility.h"
 

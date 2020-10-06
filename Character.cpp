@@ -1,7 +1,4 @@
 #include "Character.h"
-#include <iostream>
-#include <vector>
-
 #include "DefensiveItem.h"
 #include "HelpfulItem.h"
 
