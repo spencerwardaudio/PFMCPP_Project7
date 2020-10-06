@@ -9,7 +9,7 @@
 
 struct HelpfulItem : Item
 {
-    HelpfulItem() : Item("helpful item", 2) { }
+    HelpfulItem() : Item("helpful item", 1) { }
 
     void use(Character* character) override; 
 };

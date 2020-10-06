@@ -3,8 +3,8 @@
 
 DragonSlayer::DragonSlayer(std::string n, int hp, int armor) : Character(hp, armor, 4), name(n)
 {
-    helpfulItems = makeHelpfulItems(5);
-    defensiveItems = makeDefensiveItems(6);   
+    helpfulItems = makeHelpfulItems(3);
+    defensiveItems = makeDefensiveItems(1);   
 }
 
 const std::string& DragonSlayer::getName()

@@ -109,7 +109,7 @@ void useAttackItem(Character* character, Item* item)
     }
     else if( auto* chDragonSlayer = dynamic_cast<DragonSlayer*>(character))
     {
-        // chDragonSlayer->boostAttackDamage( chDragonSlayer->getAttackDamage() * item->getBoost() );
+        chDragonSlayer->boostAttackDamage( chDragonSlayer->getAttackDamage() * item->getBoost() );
         //DragonSlayers get a 10x boost when attacking dragons, from their attack item.
         //so their attack item should boost their attack damage by a factor of 10
         //this means you need to GET the attack damage, multiply it by the item's boost, and BOOST the attackDamage with that multiplied value.  
