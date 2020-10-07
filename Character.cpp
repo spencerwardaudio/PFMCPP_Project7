@@ -84,7 +84,7 @@ int Character::takeDamage(int damage)
     return hitPoints;
 }
 
-void DefeatAndLevelUp(int& startingValue , int& currentValue)
+void defeatAndLevelUp(int& startingValue, int& currentValue)
 {
     if(currentValue < startingValue)
     {
@@ -102,9 +102,9 @@ void Character::attackInternal(Character& other)
         b) your stats are boosted 10%
         c) the initial value of your stats is updated to reflect this boosted stat for the next time you defeat another character.
     */
-    DefeatAndLevelUp( *initialHitPoints, hitPoints );
-    DefeatAndLevelUp( *initialArmorLevel, armor );
-    DefeatAndLevelUp( *initialAttackDamage, attackDamage );;
+    defeatAndLevelUp( *initialHitPoints, hitPoints );
+    defeatAndLevelUp( *initialArmorLevel, armor );
+    defeatAndLevelUp( *initialAttackDamage, attackDamage );
 
     std::cout << getName() << " defeated " << other.getName() << " and leveled up!" << std::endl;  
 }

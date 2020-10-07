@@ -31,28 +31,15 @@ std::vector<std::unique_ptr<Item>> makeDefensiveItems(int num)
     return items;
 }
 
-std::vector<std::unique_ptr<Item>> makeAttackItems(int num)
-{
-    std::vector<std::unique_ptr<Item>> items;
-    
-    while( num-- >= 0 )
-    {
-        items.push_back( std::unique_ptr<AttackItem>(new AttackItem()) );
-    }
-    
-    std::cout << "made " << items.size() << " attack items" << std::endl;
-    return items;
-}
-
-std::string getCharacterStats(Character* character)
+std::string getCharacterStats(Character* ch)
 {
     std::string str;
     
-    str += "    hitPoints: " + std::to_string(character->getHP()) + "\n";
-    str += "    armor: " + std::to_string(character->getArmorLevel()) + "\n";
-    str += "    attack damage: " + std::to_string(character->getAttackDamage()) + "\n";
-    str += "    is defending: " + std::string((character->getIsDefending() ? "true" : "false" )) + "\n";
-    str += "    " + std::to_string(character->getHelpfulItems().size()) + " helpful items,  " + std::to_string(character->getDefensiveItems().size()) + " defensive items";
+    str += "    hitPoints: " + std::to_string(ch->getHP()) + "\n";
+    str += "    armor: " + std::to_string(ch->getArmorLevel()) + "\n";
+    str += "    attack damage: " + std::to_string(ch->getAttackDamage()) + "\n";
+    str += "    is defending: " + std::string((ch->getIsDefending() ? "true" : "false" )) + "\n";
+    str += "    " + std::to_string(ch->getHelpfulItems().size()) + " helpful items,  " + std::to_string(ch->getDefensiveItems().size()) + " defensive items";
     return str;
 }
 
